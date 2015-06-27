@@ -1,0 +1,9 @@
+    go get github.com/pschultz/inodes
+
+    $GOPATH/bin/inodes /home | sort -k1,1n -k 2,2r
+
+Lists cumulative number of inodes in each directory in /home (recursively),
+starting with the smallest tree
+
+Results per directory might be of by one or so. I usually don't care if I want
+to know where 120 million inodes are used.
