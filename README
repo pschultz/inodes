@@ -7,3 +7,26 @@ starting with the smallest tree
 
 Results per directory might be of by one or so. I usually don't care if I want
 to know where 120 million inodes are used.
+
+Example output:
+
+$ bin/inodes /tmp | sort -k1,1n -k 2,2r
+Staying on device 0xfd00
+      1 /tmp/.X11-unix
+      1 /tmp/jna--1712433994
+      1 /tmp/jetty-localhost-8080-war--any-
+      1 /tmp/.ICE-unix
+      1 /tmp/hsperfdata_root
+      2 /tmp/ssh-XST3ce0RgM
+      2 /tmp/ssh-nIn9S2KP4C
+      2 /tmp/ssh-eWEOlLrjft
+      2 /tmp/ssh-cHLAyJGXxY
+      2 /tmp/hsperfdata_jenkins
+      2 /tmp/go-build527932980/command-line-arguments/_obj/exe
+      3 /tmp/go-build527932980/command-line-arguments/_obj
+      4 /tmp/go-build527932980/command-line-arguments
+      6 /tmp/go-build527932980
+     27 /tmp
+
+Note that the 27 in "27 /tmp" is the sum of all the numbers above, plus the
+number of files directly in /tmp (which are not listed explicitly)
